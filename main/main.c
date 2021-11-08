@@ -40,13 +40,13 @@ static void gui_task(void *arg)
    lv_disp_drv_init(&disp_drv);           /*Basic initialization*/
    disp_drv.draw_buf = &draw_buf;         /*Set an initialized buffer*/
    disp_drv.flush_cb = disp_driver_flush; /*Set a flush callback to draw to the display*/
-   disp_drv.hor_res = 240;                /*Set the horizontal resolution in pixels*/
-   disp_drv.ver_res = 240;                /*Set the vertical resolution in pixels*/
+   disp_drv.hor_res = 128;                /*Set the horizontal resolution in pixels*/
+   disp_drv.ver_res = 160;                /*Set the vertical resolution in pixels*/
    lv_disp_drv_register(&disp_drv);       /*Register the driver and save the created display objects*/
 
    esp_register_freertos_tick_hook(lv_tick_task);
-   // lv_demo_widgets();
-   lv_demo_music();
+   lv_demo_widgets();
+   // lv_demo_music();
    // lv_demo_benchmark();
    while (1)
    {

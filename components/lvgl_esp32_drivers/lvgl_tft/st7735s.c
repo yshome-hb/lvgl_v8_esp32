@@ -84,6 +84,10 @@ void st7735s_init(void)
  		{ST7735_INVOFF, {0}, 0},                    // set non-inverted mode
 #endif
 		{ST7735_COLMOD, {0x05}, 1},               	// set color mode, 1 arg, no delay: 16-bit color
+
+        {ST7735_CASET, {0x00, 0x02, 0x00, 0x7F + 0x02}, 4}, // Column Address Set: 2, 127+2
+        {ST7735_RASET, {0x00, 0x01, 0x00, 0x9F + 0x01}, 4}, // Row Address Set: 1,159+1
+
 		{ST7735_GMCTRP1, {0x02, 0x1c, 0x07, 0x12,
 			0x37, 0x32, 0x29, 0x2d,
 			0x29, 0x25, 0x2B, 0x39,
